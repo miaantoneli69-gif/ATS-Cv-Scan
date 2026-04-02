@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATS-Scanner Pro - L'Audit Technique de CV</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">ATS-Scanner <span>PRO</span></div>
+        <ul class="nav-links">
+            <li><a href="#analyzer-section">Analyser</a></li>
+            <li><a href="#pricing-section">Crédits & Tarifs</a></li>
+            <li class="credits-badge" id="credits-badge">Chargement...</li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        
+        <header class="hero">
+            <h1>Dominez les Algorithmes de Recrutement.</h1>
+            <p>Obtenez un audit technique de votre CV. Calculez votre score de compatibilité ATS, identifiez les bloqueurs de lecture et optimisez vos mots-clés instantanément.</p>
+        </header>
+
+        <section id="analyzer-section" class="glass-panel main-panel">
+            <div class="input-area">
+                <label for="cv-text">Collez le texte brut de votre CV ci-dessous :</label>
+                <textarea id="cv-text" placeholder="Expériences, Formations, Compétences..."></textarea>
+            </div>
+            
+            <button id="analyze-btn" class="primary-btn">
+                <span class="btn-text">Lancer le scan détaillé</span>
+                <div class="loader-spinner" id="loader"></div>
+            </button>
+            <p id="error-message" class="error-msg"></p>
+        </section>
+
+        <!-- Résultats masqués par défaut -->
+        <section id="results-section" class="results-container hidden">
+            <div class="score-card glass-panel">
+                <h2>📊 SCORE ATS GLOBAL</h2>
+                <div class="metric">
+                    <span class="score-value" id="score-value">0</span><span class="score-max">/100</span>
+                </div>
+                <p class="verdict" id="verdict-text">Analyse en cours...</p>
+            </div>
+
+            <div class="grid-layout">
+                <div class="glass-panel block-card">
+                    <h3>🛑 ERREURS DE LECTURE</h3>
+                    <ul id="errors-list" class="styled-list">
+                    </ul>
+                </div>
+                
+                <div class="glass-panel block-card">
+                    <h3>🔑 MOTS-CLÉS À AJOUTER</h3>
+                    <div id="keywords-container" class="tags">
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-panel full-width-card mt-2">
+                <h3>🛠 RÉVISIONS PRÉCISES (AVANT / APRÈS)</h3>
+                <div class="revisions-wrapper" id="revisions-container">
+                    <!-- Généré en JS -->
+                </div>
+            </div>
+
+            <div class="glass-panel mt-2 advice-panel">
+                <h3>💡 CONSEIL DE MISE EN PAGE</h3>
+                <p id="layout-advice"></p>
+            </div>
+        </section>
+
+        <section id="pricing-section" class="pricing-section glass-panel">
+            <h2>Passez à la vitesse supérieure</h2>
+            <p>1 analyse gratuite par semaine par compte simulé. Achetez des crédits virtuels pour analyser sans limite.</p>
+            <div class="pricing-cards">
+                <div class="price-tier">
+                    <h3>Découverte</h3>
+                    <p class="price">Gratuit</p>
+                    <ul>
+                        <li>1 analyse / semaine</li>
+                        <li>Rapport complet</li>
+                    </ul>
+                    <button class="secondary-btn" disabled>Inclus</button>
+                </div>
+                <div class="price-tier best-value">
+                    <h3>Pro Pack</h3>
+                    <p class="price">9.99€</p>
+                    <ul>
+                        <li>10 analyses</li>
+                        <li>Corrections IA poussées</li>
+                    </ul>
+                    <button class="primary-btn pulse" onclick="buyCredits(10)">Acheter 10 Crédits</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
